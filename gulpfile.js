@@ -2,6 +2,7 @@ var gulp    = require("gulp");
 var gutil   = require("gulp-util");
 var jade    = require("gulp-jade");
 var compass = require("gulp-compass");
+var connect = require("gulp-connect");
 var del     = require("del");
 
 var paths = {
@@ -58,6 +59,13 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.stylesheets, ['build:stylesheets']);
 });
 
+gulp.task('server:dev', function() {
+  connect.server({
+    "root": "./build",
+    "livereload": true
+  });
+});
+
 gulp.task('clean:build:templates', function() {
   del(paths.build.templates);
 });
@@ -78,4 +86,4 @@ gulp.task('build', ['build:templates', 'build:stylesheets']);
 
 gulp.task('dist', ['dist:templates', 'dist:stylesheets']);
 
-gulp.task('develop', ['build', 'watch']);
+gulp.task('dev', ['build', 'server:dev', 'watch']);
