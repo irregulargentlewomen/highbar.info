@@ -1,0 +1,14 @@
+include ./_mixins.jade
+
+mixin layout
+  doctype html
+  html(lang="en")
+    head
+      title= meta.banner
+      link(rel='stylesheet' href='/stylesheets/main.css' type='text/css')
+    body
+      main
+        block
+      footer
+        a.credits(href="/credits") Credits
+        a.submit(href="/submit") Submit your information for inclusion

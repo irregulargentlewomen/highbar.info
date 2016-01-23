@@ -7,7 +7,7 @@ var del     = require("del");
 
 var paths = {
   "src": {
-    "templates": "./src/templates/**/[!_]*.jade",
+    "templates": "./src/templates/**/*.jade",
     "stylesheets": "./src/stylesheets/**/*.scss"
   },
   "build": {
@@ -33,13 +33,15 @@ gulp.task('build:templates', ['clean:build:templates'], function() {
 
   gulp.src(paths.src.templates)
     .pipe(jade({locals: templateData, pretty: true}))
-    .pipe(gulp.dest(paths.build.root));
+    .pipe(gulp.dest(paths.build.root))
+    .pipe(connect.reload());
 });
 
 gulp.task('build:stylesheets', ['clean:build:stylesheets'], function() {
   gulp.src(paths.src.stylesheets)
     .pipe(compass({sass: "./src/stylesheets", css: "/tmp/compass_out"}))
-    .pipe(gulp.dest(paths.build.stylesheets));
+    .pipe(gulp.dest(paths.build.stylesheets))
+    .pipe(connect.reload());
 });
 
 gulp.task('dist:templates', ['build:templates', 'clean:dist:templates'], function() {
@@ -56,6 +58,8 @@ gulp.task('watch', function() {
   gulp.watch(paths.src.templates,   ['build:templates']);
   gulp.watch(paths.data.meta,       ['build:templates']);
   gulp.watch(paths.data.people,     ['build:templates']);
+  gulp.watch('./CONTRIBUTING.md',   ['build:templates']);
+  gulp.watch('./CREDITS.md',        ['build:templates']);
   gulp.watch(paths.src.stylesheets, ['build:stylesheets']);
 });
 

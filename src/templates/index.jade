@@ -1,15 +1,6 @@
-include ./_mixins.jade
+include ./../components/layout.jade
 
-doctype html
-html(lang="en")
-  head
-    title= meta.banner
-    link(rel='stylesheet' href='/stylesheets/main.css' type='text/css')
-  body
-    main
-      each person in people
-        +blurb(person)
-      h1= meta.banner
-    footer
-      a.credits(href="/credits") Credits
-      a.submit(href="/submit") Submit your information for inclusion
++layout
+  each person in people
+    +blurb(person)
+  h1= meta.banner
