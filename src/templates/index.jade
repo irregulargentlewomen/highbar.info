@@ -1,32 +1,4 @@
-mixin blurb(person)
-  article
-    h2= person.name
-    section
-      if person.location
-        p.location= person.location
-      p= person.bio
-      ul
-        +github(person.github)
-        +twitter(person.twitter)
-        +website(person.website)
-        +email(person.email)
-
-mixin optional_link(base, href, text)
-  if base
-    li
-      a(href=href)= text || base
-
-mixin twitter(username)
-  +optional_link(username, "https://twitter.com/" + username, "@" + username)
-
-mixin github(username)
-  +optional_link(username, "https://github.com/" + username)
-
-mixin website(url)
-  +optional_link(url, url)
-
-mixin email(email)
-  +optional_link(email, "mailto:" + email)
+include ./_mixins.jade
 
 doctype html
 html(lang="en")
