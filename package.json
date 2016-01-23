@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/irregulargentlewomen/highbar.info/issues"
   },
-  "homepage": "https://github.com/irregulargentlewomen/highbar.info#readme"
+  "homepage": "https://github.com/irregulargentlewomen/highbar.info#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-data": "^1.2.1",
+    "gulp-jade": "^1.1.0"
+  }
 }
