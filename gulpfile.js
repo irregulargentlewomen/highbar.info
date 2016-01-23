@@ -1,5 +1,7 @@
-var gulp = require("gulp");
-var jade = require("gulp-jade");
+var gulp  = require("gulp");
+var gutil = require("gulp-util");
+var jade  = require("gulp-jade");
+
 
 var paths = {
   "src": {
