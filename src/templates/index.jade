@@ -8,4 +8,7 @@ html(lang="en")
     main
       each person in people
         +blurb(person)
-    h1= meta.banner
+      h1= meta.banner
+    footer
+      a.credits(href="/credits") Credits
+      a.submit(href="/submit") Submit your information for inclusion
