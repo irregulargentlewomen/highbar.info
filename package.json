@@ -1,0 +1,19 @@
+{
+  "name": "highbar.info",
+  "version": "1.0.0",
+  "description": "a political project",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/irregulargentlewomen/highbar.info.git"
+  },
+  "author": "Betsy Haibel, Elizabeth Yalkut",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/irregulargentlewomen/highbar.info/issues"
+  },
+  "homepage": "https://github.com/irregulargentlewomen/highbar.info#readme"
+}
