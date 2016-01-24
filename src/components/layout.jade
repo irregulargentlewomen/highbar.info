@@ -1,15 +1,16 @@
 include ./_mixins.jade
 
-mixin layout
-  doctype html
-  html(lang="en")
-    head
-      title= meta.banner
-      link(rel='stylesheet' href='/stylesheets/main.css' type='text/css')
-      script(src='/javascripts/app.js' type='application/javascript')
-    body
-      main
-        block
-      footer
-        a.credits(href="/credits") Credits
-        a.submit(href="/submit") Submit your information for inclusion
+doctype html
+html(lang="en")
+  head
+    title= meta.banner
+    link(rel='stylesheet' href='/stylesheets/main.css' type='text/css')
+    script(src='/javascripts/app.js' type='application/javascript')
+  body
+    h1
+      block h1
+    main
+      block content
+    footer
+      a.credits(href="/credits") Credits
+      a.submit(href="/submit") Submit your information for inclusion

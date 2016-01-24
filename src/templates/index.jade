@@ -1,6 +1,8 @@
-include ./../components/layout.jade
+extends ./../components/layout.jade
 
-+layout
-  h1= meta.banner
+block h1
+  meta.banner
+
+block content
   each person in people
     +blurb(person)
