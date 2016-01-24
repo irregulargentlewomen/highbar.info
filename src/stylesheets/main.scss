@@ -1,115 +1,134 @@
 @import "compass";
 @import url(https://fonts.googleapis.com/css?family=Lato:300+Bitter:700);
-
 @mixin icons {
-  font-family: FontAwesome;
-  padding-right: .25rem;
-  color: $secondary;
+    font-family: FontAwesome;
+    padding-right: .25rem;
+    color: $tangerine;
 }
 
 // Colors
-$brown: #7E687B;
-$purple: //#694E9C;
-//$blue:
-  #4abaff;
-$accent: //#864e7c;
-//$blue-accent:
-  #0087db;
-$secondary: #FF8F4B;
+$tangerine: #FF8F4B; /* use for page title and small accents */
+$gradient-start: #0087db;
+$gradient-end: #001adb;
+$pale: #fefefe;
+body {
+    background-color: $pale;
+}
 
-body {  background-color: #fefefe;
-}
 main {
-  @media(min-width: 40rem) { display: flex; }
-  padding: 0 3rem;
-  color: $brown;
-  font-family: Lato, sans;
-  text-rendering:optimizeLegibility;
-}
-article {
-  @include box-shadow($purple 2px 2px 10px);
-  width: 100%;
-  margin-bottom: 1rem;
-  @media(min-width:50em) {
-    width: 30%;
-    margin: 0 1rem;
-    &:first-child {
-      margin-left: 0;
+    @media(min-width: 40rem) {
+        display: flex;
+        flex-wrap: wrap;
     }
-  }
-  section {
-    padding: 0 1rem 1rem;
-  }
-  .location {
-    font-style: italic;
-  }
-  .avatar {
-    float: left;
-    max-width: 5rem;
-    height: auto;
-    margin-right: 1rem;
-    border-radius: 50%;
-    border: solid 10px $purple;
-  }
+    padding: 0 3rem;
+    color: #000;
+    font-family: Lato,
+    sans;
+    text-rendering:optimizeLegibility;
 }
+
+article {
+    @include box-shadow($gradient-end 2px 2px 10px);
+    width: 100%;
+    margin-bottom: 1rem;
+    @media(min-width: 50em) {
+        &:first-of-type {
+        margin-left: 0;
+      }
+        width: 30%;
+        margin: 0 1rem;
+        //flex stuff
+        order: 1;
+
+    }
+    section {
+        padding: 0 1rem 1rem;
+    }
+    .location {
+        font-style: italic;
+    }
+}
+
 h1 {
-  background-color: $purple;
-  @include filter-gradient($purple, $accent, horizontal);
-  @include background-image(linear-gradient(left, $purple 0%,$accent 100%));
-  color: $secondary;
-  text-align: center;
-  font-family: Bitter, serif;
-  font-size: 3rem;
-  border-bottom: solid 15px $secondary;
-  line-height: 1.5;
-  margin: 0;
+    background-color: $gradient-end;
+    @include filter-gradient($gradient-start, $gradient-end, horizontal);
+    @include background-image(linear-gradient(left, $gradient-start 0%, $gradient-end 100%));
+    color: $tangerine;
+    text-align: center;
+    font-family: Bitter, serif;
+    font-size: 3rem;
+    border-bottom: solid 15px $tangerine;
+    padding: 0 .5rem;
+    margin: 0;
+    @media(min-width: 50em) {
+      align-self: flex-end;
+      line-height: 1.5;    
+      //flex stuff
+      order: 4;
+    }
 }
+
 h2 {
-  background-color: $purple;
-  @include filter-gradient($purple, $accent, horizontal);
-  @include background-image(linear-gradient(left, $purple 0%,$accent 100%));
-  color: #D8D7D8;
-  line-height: 1.4;
-  padding: 0 1rem;
-  margin-top: 0;
+    background-color: $gradient-end;
+    @include filter-gradient($gradient-start, $gradient-end, horizontal);
+    @include background-image(linear-gradient(left, $gradient-start 0%, $gradient-end 100%));
+    color: $pale;
+    line-height: 1.4;
+    padding: 0 1rem;
+    margin-top: 0;
 }
+
 ul {
-  list-style-type: none;
-  padding-left: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
+
 a {
-  color:$purple;
-  text-decoration:none;
-  outline:none;
-  border-bottom: solid 1px transparent;
-  @include transition-property(color,border);
-  @include transition-duration(0.5s);
-  &:link, &:visited {
-    color:$purple;
-  }
-  &:hover,
-  &:active {
-    color:$accent;
-    text-decoration:none;
-    border-bottom:solid 1px $secondary;
-  }
-  &[href^="mailto:"]:before {
-    @include icons;
-    content: "\f003";
-  }
-  &[href*="github"]:before {
-    @include icons;
-    content: "\f09b";
-  }
-  &[href*="twitter"]:before {
-    @include icons;
-    content: "\f099";
-  }
+    color: $gradient-start;
+    text-decoration: none;
+    outline: none;
+    border-bottom: solid 1px transparent;
+    @include transition-property(color, border);
+    @include transition-duration(0.5s);
+    &:link,
+    &:visited {
+        color: $gradient-start;
+    }
+    &:hover,
+    &:active {
+        color: $gradient-end;
+        text-decoration: none;
+        border-bottom: solid 1px $tangerine;
+    }
+    ul & {
+        &:before {
+            @include icons;
+            content: "\f015";
+        }
+        &[href^="mailto:"]:before {
+            @include icons;
+            content: "\f14b";
+        }
+        &[href*="github"]:before {
+            @include icons;
+            content: "\f09b";
+        }
+        &[href*="twitter"]:before {
+            @include icons;
+            content: "\f099";
+        }
+    }
 }
+
 footer {
-  position: absolute;
-  right: 0;
-  margin-top: -1rem;
-  font-size: 80%;
-  color: #fff;
+  @media(min-width: 40em) {
+    text-align: right;
+  }
+    font-size: 80%;
+    color: $pale;
+
+    text-align: center;
+    a {
+      padding: 0 .25rem;
+    }
 }
