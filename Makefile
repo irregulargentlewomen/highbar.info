@@ -7,10 +7,11 @@ dev-server:
 	gulp dev
 
 deploy: clean dist
+	node deploy.js
 
 dist: build
 	cp -r build dist
-	./node_modules/uglify-js/bin/uglifyjs dist/javascripts/app.js -o dist/javascripts.app.js
+	./node_modules/uglify-js/bin/uglifyjs dist/javascripts/app.js -o dist/javascripts/app.js
 
 build:
 	gulp build
