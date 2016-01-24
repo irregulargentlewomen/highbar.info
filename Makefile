@@ -6,4 +6,17 @@ install-dependencies:
 dev-server:
 	gulp dev
 
-.PHONY: install-dependencies
+deploy: clean dist
+
+dist: build
+	cp -r build dist
+	./node_modules/uglify-js/bin/uglifyjs dist/javascripts/app.js -o dist/javascripts.app.js
+
+build:
+	gulp build
+
+clean:
+	rm -r build
+	rm -r dist
+
+.PHONY: install-dependencies clean deploy
