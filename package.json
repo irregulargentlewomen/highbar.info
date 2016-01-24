@@ -4,7 +4,6 @@
   "description": "a political project",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp test"
   },
   "repository": {
     "type": "git",

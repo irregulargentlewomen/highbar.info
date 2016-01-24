@@ -7,15 +7,13 @@ Reasonably functional & up-to-date installs of Ruby/Bundler & Node/NPM are assum
 After cloning the repository:
 
 ```
-npm install -g gulp
-npm install
-bundle
+make install-dependencies
 ```
 
 During local development, run:
 
 ```
-gulp dev
+make dev-server
 ```
 
 This will autorebuild files as needed & run a dev server at `localhost:8080`.
