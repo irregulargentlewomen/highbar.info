@@ -8,6 +8,7 @@ var source     = require("vinyl-source-stream");
 var buffer     = require("vinyl-buffer");
 var del        = require("del");
 var debug      = require("gulp-debug");
+var plumber    = require("gulp-plumber");
 
 var paths = {
   "src": {
@@ -34,12 +35,22 @@ var paths = {
   }
 };
 
+var safeError = function() {
+  return plumber({
+    errorHandler: function(err) {
+      gutil.beep();
+      console.log(err);
+    }
+  });
+};
+
 gulp.task('build:templates', ['clean:build:templates'], function() {
   var templateData = {};
   templateData.meta   = require(paths.data.meta);
   templateData.people = require(paths.data.people);
 
   gulp.src(paths.src.templates)
+    .pipe(safeError())
     .pipe(jade({locals: templateData, pretty: true}))
     .pipe(gulp.dest(paths.build.root))
     .pipe(connect.reload());
@@ -47,6 +58,7 @@ gulp.task('build:templates', ['clean:build:templates'], function() {
 
 gulp.task('build:stylesheets', ['clean:build:stylesheets'], function() {
   gulp.src(paths.src.stylesheets)
+    .pipe(safeError())
     .pipe(compass({sass: "./src/stylesheets", css: "/tmp/compass_out"}))
     .pipe(gulp.dest(paths.build.stylesheets))
     .pipe(connect.reload());
@@ -57,6 +69,7 @@ gulp.task('build:javascripts', ['clean:build:javascripts'], function() {
     entries: paths.src.javascripts,
     debug: true
   }).bundle()
+    .pipe(safeError())
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(gulp.dest(paths.build.javascripts))
