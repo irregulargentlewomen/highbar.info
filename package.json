@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "a political project",
   "main": "gulpfile.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/irregulargentlewomen/highbar.info.git"
@@ -20,6 +19,7 @@
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-compass": "^2.1.0",
+    "gulp-connect": "^2.3.1",
     "gulp-debug": "^2.1.2",
     "gulp-jade": "^1.1.0",
     "gulp-util": "^3.0.7",
