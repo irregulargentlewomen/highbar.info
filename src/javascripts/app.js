@@ -5,7 +5,7 @@ Highbar = {
   "shuffle": function() {
     var reshuffledNodes = shuffle($('article.person').toArray());
     $('article.person').remove();
-    $('main').prepend(reshuffledNodes);
+    $('main').append(reshuffledNodes);
   }
 }
 
