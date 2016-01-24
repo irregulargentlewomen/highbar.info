@@ -17,11 +17,19 @@
   },
   "homepage": "https://github.com/irregulargentlewomen/highbar.info#readme",
   "devDependencies": {
+    "browserify": "^13.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-compass": "^2.1.0",
+    "gulp-debug": "^2.1.2",
     "gulp-jade": "^1.1.0",
     "gulp-util": "^3.0.7",
-    "markdown": "^0.5.0"
+    "markdown": "^0.5.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "lodash.shuffle": "^4.0.0"
   }
 }
