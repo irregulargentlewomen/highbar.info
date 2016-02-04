@@ -20,7 +20,8 @@ test: clean dist
 	./node_modules/mocha/bin/mocha test
 
 clean:
-	rm -r build
-	rm -r dist
+	mkdir -p build dist
+	rm -r build/
+	rm -r dist/
 
 .PHONY: install-dependencies clean deploy test
