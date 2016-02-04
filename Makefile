@@ -16,8 +16,11 @@ dist: build
 build:
 	gulp build
 
+test: clean dist
+	./node_modules/mocha/bin/mocha test
+
 clean:
 	rm -r build
 	rm -r dist
 
-.PHONY: install-dependencies clean deploy
+.PHONY: install-dependencies clean deploy test
