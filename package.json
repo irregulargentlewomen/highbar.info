@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "a political project",
   "main": "gulpfile.js",
-  "scripts": {},
+  "scripts": {
+    "test": "make test"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/irregulargentlewomen/highbar.info.git"
