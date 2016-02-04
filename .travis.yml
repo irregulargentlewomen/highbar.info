@@ -2,3 +2,8 @@ language: node_js
 node_js:
   - stable
 before_install: gem install compass
+deploy:
+  provider: script
+  script: make deploy
+  on:
+    branch: master
