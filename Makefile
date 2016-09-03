@@ -1,10 +1,9 @@
 install-dependencies:
-	npm install -g gulp
 	npm install
 	bundle
 
 dev-server:
-	gulp dev
+	npm start
 
 deploy: clean dist
 	node deploy.js
@@ -14,7 +13,7 @@ dist: build
 	./node_modules/uglify-js/bin/uglifyjs dist/javascripts/app.js -o dist/javascripts/app.js
 
 build:
-	gulp build
+	npm run build
 
 clean:
 	rm -r build
