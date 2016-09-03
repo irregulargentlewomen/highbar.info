@@ -1,0 +1,2 @@
+install: make install-dependencies
+script: make build
