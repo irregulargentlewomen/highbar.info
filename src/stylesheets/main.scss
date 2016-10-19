@@ -13,6 +13,7 @@ $gradient-end: #001adb;
 $pale: #fefefe;
 body {
     background-color: $pale;
+    margin: 0;
 }
 
 main {
@@ -47,6 +48,9 @@ article {
     .location {
         font-style: italic;
     }
+    em {
+        color: $tangerine;
+    }
 }
 
 h1 {
@@ -57,14 +61,15 @@ h1 {
     text-align: center;
     font-family: Bitter, serif;
     font-size: 3rem;
-    border-bottom: solid 15px $tangerine;
+    border-bottom: double 15px $tangerine;
     padding: 0 .5rem;
-    margin: 0;
+    margin: 0 0 .5rem;
     @media(min-width: 50em) {
       align-self: flex-end;
       line-height: 1.5;    
       //flex stuff
       order: 4;
+      flex-grow: 3;
     }
 }
 
@@ -126,9 +131,9 @@ footer {
   }
     font-size: 80%;
     color: $pale;
-
+    padding: .5rem;
     text-align: center;
     a {
-      padding: 0 .25rem;
+      margin: 0 .25rem;
     }
 }

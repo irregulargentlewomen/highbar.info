@@ -6,7 +6,7 @@ To add yourself to the project, please fork it on GitHub: [https://github.com/ir
 
 Please append your information to `data/people.json`. `"name"` and `"bio"` are required fields; target length for bios is about 400-600 characters. You may also optionally provide your `"location"`, `"github"` username, `"twitter"` username (no `@`, please!), `"website"` url, and/or `"email"`.
 
-We ask that only people from groups that are historically underrepresented in the tech industry (women; people of color; LGBTQQIA people, including nonbinary people; people with disabilities; etc.) add themselves to this project. We have neither the bandwidth nor the desire to police people's identities; if you add yourself, we'll assume you belong here.
+We ask that only people from groups that are historically underrepresented in the tech industry (e.g., women; people of color; LGBTQQIA people, including nonbinary people; people with disabilities; etc.) add themselves to this project. We have neither the bandwidth nor the desire to police people's identities; if you add yourself, we'll assume you belong here.
 
 We also ask that people only add *themselves*.
 
